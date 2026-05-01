@@ -1,0 +1,7 @@
+[gd_resource type="InputEventShortcut" load_steps=2 format=3 uid="uid://sbh5t7snvr32"]
+
+[sub_resource type="Shortcut" id="Shortcut_syeuq"]
+events = [null]
+
+[resource]
+shortcut = SubResource("Shortcut_syeuq")

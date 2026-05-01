@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ch7ihnfh7rn0v"]
+
+[sub_resource type="GDScript" id="GDScript_1e53q"]
+script/source = "extends ListViewEntry
+
+func _set_item_data(data: Object):
+	pass
+"
+
+[node name="PlaceholderEntry" type="Control" unique_id=1197195628]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_1e53q")
+
+[node name="Label" type="Label" parent="." unique_id=123214010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No EntryScene specified"

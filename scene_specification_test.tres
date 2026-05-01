@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SceneSpecification" load_steps=2 format=3 uid="uid://dhjeqdug4btcn"]
+
+[ext_resource type="Script" uid="uid://d0375j1wjuqkx" path="res://addons/scene_switcher/resources/scene_specification.gd" id="1_7aqrg"]
+
+[resource]
+script = ExtResource("1_7aqrg")
+metadata/_custom_type_script = "uid://d0375j1wjuqkx"

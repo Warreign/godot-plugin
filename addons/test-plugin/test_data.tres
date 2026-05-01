@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CustomDataTable" load_steps=7 format=3 uid="uid://boyg6q0y5vhu4"]
+
+[ext_resource type="Script" uid="uid://dv4cka0jnasxo" path="res://addons/test-plugin/data_table.gd" id="1_5j4r2"]
+[ext_resource type="Script" uid="uid://bxw1nqkv8hfsr" path="res://addons/test-plugin/scene_entry.gd" id="1_hdkci"]
+[ext_resource type="PackedScene" uid="uid://bndwn55r8rx7u" path="res://addons/test-plugin/plugin_control.tscn" id="2_21bff"]
+
+[sub_resource type="PackedScene" id="PackedScene_5j4r2"]
+
+[sub_resource type="Resource" id="Resource_la0e5"]
+script = ExtResource("1_hdkci")
+name = &"asdasd"
+scene = ExtResource("2_21bff")
+metadata/_custom_type_script = "uid://bxw1nqkv8hfsr"
+
+[sub_resource type="Resource" id="Resource_hdkci"]
+script = ExtResource("1_hdkci")
+metadata/_custom_type_script = "uid://bxw1nqkv8hfsr"
+
+[resource]
+script = ExtResource("1_5j4r2")
+dict = {
+"": null,
+"aaaaasdasd": SubResource("PackedScene_5j4r2")
+}
+rsa = Array[ExtResource("1_hdkci")]([SubResource("Resource_la0e5"), SubResource("Resource_hdkci")])
+metadata/_custom_type_script = "uid://dv4cka0jnasxo"

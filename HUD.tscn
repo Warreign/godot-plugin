@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://o24ue6y4v58"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1754436959]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=755351248]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1873077287]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

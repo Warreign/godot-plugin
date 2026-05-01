@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://dmr2yc7ari2i7"]
+
+[ext_resource type="Script" uid="uid://e38hts0fslor" path="res://main_menu.gd" id="1_i26rj"]
+[ext_resource type="Script" uid="uid://col46qqfmr0xy" path="res://addons/listview/list_view.gd" id="2_eiy7p"]
+[ext_resource type="PackedScene" uid="uid://cmkpo3austeoc" path="res://listview_test/test_item.tscn" id="3_h7a2f"]
+[ext_resource type="Shader" uid="uid://c8awc3n78ibe4" path="res://shader_test/test.gdshader" id="4_qoqlk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjwba"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qoqlk"]
+shader = ExtResource("4_qoqlk")
+shader_parameter/region = 0.25
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qoqlk"]
+size = Vector2(300, 300)
+
+[sub_resource type="Animation" id="Animation_qoqlk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+
+[sub_resource type="Animation" id="Animation_iwfq2"]
+resource_name = "increase_region"
+length = 0.25
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7r1g0"]
+_data = {
+&"RESET": SubResource("Animation_qoqlk"),
+&"increase_region": SubResource("Animation_iwfq2")
+}
+
+[node name="MainMenu" type="Control" unique_id=749153174]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i26rj")
+
+[node name="Panel" type="Panel" parent="." unique_id=1312901871]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjwba")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=2100652127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -35.0
+offset_right = 24.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="Container" unique_id=1621216405]
+layout_mode = 2
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="Container" unique_id=36295311]
+layout_mode = 2
+text = "Exit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=845209212]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 145.0
+offset_right = 957.0
+offset_bottom = 479.0
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=36031807]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -207.07178
+offset_top = -85.89981
+offset_bottom = 85.89981
+grow_horizontal = 0
+grow_vertical = 2
+vertical = true
+
+[node name="Button" type="Button" parent="BoxContainer" unique_id=1502828878]
+layout_mode = 2
+text = "a a a a a"
+
+[node name="Button2" type="Button" parent="BoxContainer" unique_id=1420121169]
+layout_mode = 2
+text = "a a a a a"
+
+[node name="Button3" type="Button" parent="BoxContainer" unique_id=928555913]
+layout_mode = 2
+text = "a a a a a"
+
+[node name="ListView" type="ScrollContainer" parent="." unique_id=946274246]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -262.0
+offset_right = 200.0
+offset_bottom = 262.0
+grow_vertical = 2
+focus_mode = 2
+focus_behavior_recursive = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+script = ExtResource("2_eiy7p")
+entry_scene = ExtResource("3_h7a2f")
+is_vertical = true
+debug_items_count = 4
+separation = 6
+metadata/_custom_type_script = "uid://col46qqfmr0xy"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=15523333]
+material = SubResource("ShaderMaterial_qoqlk")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 1.0
+grow_horizontal = 2
+texture = SubResource("PlaceholderTexture2D_qoqlk")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=779552492]
+libraries/ = SubResource("AnimationLibrary_7r1g0")
+
+[connection signal="pressed" from="Container/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Container/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="ListView/@BoxContainer@380709/TestItem" to="ListView/@BoxContainer@380709/TestItem" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ListView/@BoxContainer@380709/TestItem" to="ListView/@BoxContainer@380709/TestItem" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ListView/@BoxContainer@380709/@Control@380706" to="ListView/@BoxContainer@380709/@Control@380706" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ListView/@BoxContainer@380709/@Control@380706" to="ListView/@BoxContainer@380709/@Control@380706" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ListView/@BoxContainer@380709/@Control@380707" to="ListView/@BoxContainer@380709/@Control@380707" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ListView/@BoxContainer@380709/@Control@380707" to="ListView/@BoxContainer@380709/@Control@380707" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ListView/@BoxContainer@380709/@Control@380708" to="ListView/@BoxContainer@380709/@Control@380708" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ListView/@BoxContainer@380709/@Control@380708" to="ListView/@BoxContainer@380709/@Control@380708" method="_on_mouse_exited"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bndwn55r8rx7u"]
+
+[ext_resource type="Script" uid="uid://3bxcmwtg7vn7" path="res://addons/test-plugin/test_sprite.gd" id="1_skysg"]
+[ext_resource type="Script" uid="uid://dv4cka0jnasxo" path="res://addons/test-plugin/data_table.gd" id="2_e0pe2"]
+
+[sub_resource type="GDScript" id="GDScript_e0pe2"]
+
+[sub_resource type="Resource" id="Resource_t57nb"]
+script = ExtResource("2_e0pe2")
+metadata/_custom_type_script = "uid://dv4cka0jnasxo"
+
+[node name="PluginControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Hehehe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+self_modulate = Color(0.8185029, 0.66591716, 0.85411537, 1)
+script = ExtResource("1_skysg")
+dtable = SubResource("Resource_t57nb")
